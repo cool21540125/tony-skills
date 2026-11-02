@@ -17,7 +17,7 @@ npx skills@latest add cool21540125/tony-skills
 更新:
 
 ```bash
-npx skills@latest update
+npx skills@latest update <skill-name>...
 ```
 
 也可以手動複製 `skills/<name>/` 整個資料夾到你的 agent 的 skills 目錄.
