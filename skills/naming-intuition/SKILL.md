@@ -1,6 +1,6 @@
 ---
 name: naming-intuition
-description: 從英文母語者的語感拆解程式、工具、API、設定項的命名 (函式名、參數名、指令、概念名), 讓中文母語的使用者理解「這個字在英文裡給人什麼畫面」以及「作者為何選這個字」. 涵蓋單字本義與意象、在該領域的命名傳統與典故、與近義候選字的差異、中文翻譯容易誤導之處. Use when 使用者丟出一個命名並想理解它, 例如「prometheus 的 clamp_min」「k8s 的 taint 為什麼叫 taint」「git 的 porcelain 是什麼意思」「為什麼叫 idempotent」, 或問「這個字什麼意思」「為什麼這樣命名」「這名字的由來」. DO NOT trigger for: 只問該功能怎麼用、怎麼除錯 (那是技術問題, 不是命名問題).
+description: "從英文母語者的語感拆解程式、工具、API、設定項的命名 (函式名、參數名、指令、概念名), 讓中文母語的使用者理解「這個字在英文裡給人什麼畫面」以及「作者為何選這個字」. 涵蓋單字本義與意象、在該領域的命名傳統與典故、與近義候選字的差異、中文翻譯容易誤導之處. Use when 使用者丟出一個命名並想理解它, 例如「prometheus 的 clamp_min」「k8s 的 taint 為什麼叫 taint」「git 的 porcelain 是什麼意思」「為什麼叫 idempotent」, 或問「這個字什麼意思」「為什麼這樣命名」「這名字的由來」. DO NOT trigger for: 只問該功能怎麼用、怎麼除錯 (那是技術問題, 不是命名問題)."
 ---
 
 # Naming Intuition
