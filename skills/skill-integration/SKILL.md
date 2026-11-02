@@ -60,7 +60,7 @@ relationship 只有下面三種, 不得新增其他類型. 只在同一邊內建
 - 作者的明文優先於動詞: 例如寫 "call X" 卻註明 "a reference to consult, not a session to run", 歸 `REFERENCES`.
 - 強度與條件寫進 `reason`, 例「強制」, 「測試失敗時」, 「二選一, 推薦 X」.
 - 第三方資產 (例導覽型 SKILL) 描述 A → B 的流程時, 建 `(A)-[:FLOWS_TO]->(B)`, 並在 `reason` 寫明出自哪個資產; 第三方本身另建關係指向 A 與 B.
-- 否定句與純示例不算.
+- 否定句, 純示例, 職責劃分都不算. 職責劃分指 description 的 DO NOT trigger, 「那是 X」, 或正文「超出範圍的 Y 改用 X」, 都只是在說 X 不歸 A 管. 但「A 的任務中需要確認 Z 時用 X 查」仍算 `INVOKES`.
 - 引用名稱只在同一邊, 符合證據所示 kind 的資產中比對: 剛好一個才建關係; 零個或多個都不建, 列進回報. 同一對 node 同類型的關係只建一條.
 
 每條 relationship 都帶 `reason`: 最多 3 句, 能短就短, 說明兩者的關聯.
