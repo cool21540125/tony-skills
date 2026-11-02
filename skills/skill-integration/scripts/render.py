@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Render skill-integration snapshots into one Cypher CREATE statement.
 
-Usage: render.py <local.json|-> <their.json> <out.cypher>
-Pass '-' as local.json to render the their side only.
+Usage: render.py <local.json|-> <remote.json> <out.cypher>
+Pass '-' as local.json to render the remote side only.
 
 Validates the snapshots first; on any problem prints them to stderr and exits 1
 without writing the output file.
@@ -87,22 +87,22 @@ def render(snap, prefix, label, lines, rels):
 
 
 def main():
-    local_path, their_path, out = sys.argv[1:4]
+    local_path, remote_path, out = sys.argv[1:4]
     load = lambda p: {'nodes': [], 'rels': []} if p == '-' else json.load(open(p, encoding='utf-8'))
-    local, their = load(local_path), load(their_path)
+    local, remote = load(local_path), load(remote_path)
     errors = []
     check(local, 'local', errors)
-    check(their, 'their', errors)
+    check(remote, 'remote', errors)
     if errors:
         print('\n'.join(errors), file=sys.stderr)
         sys.exit(1)
-    head = ['// source: %s' % their.get('source', ''), '// commit: %s' % their.get('commit', '')]
+    head = ['// source: %s' % remote.get('source', ''), '// commit: %s' % remote.get('commit', '')]
     body, rels = [], []
     if local_path != '-':
         body.append('  // local')
         render(local, 'l', 'local', body, rels)
-    body.append('  // their')
-    render(their, 't', 'their', body, rels)
+    body.append('  // remote')
+    render(remote, 'r', 'remote', body, rels)
     body += ['  // relationships'] + rels
     items = [i for i, l in enumerate(body) if not l.startswith('  //')]
     for i in items[:-1]:
@@ -111,8 +111,8 @@ def main():
         body[items[-1]] += ';'
     open(out, 'w', encoding='utf-8').write('\n'.join(head + ['CREATE'] + body) + '\n')
     count = lambda s, f: len(s.get(f, []))
-    print('local %d nodes / %d rels, their %d nodes / %d rels -> %s' % (
-        count(local, 'nodes'), count(local, 'rels'), count(their, 'nodes'), count(their, 'rels'), out))
+    print('local %d nodes / %d rels, remote %d nodes / %d rels -> %s' % (
+        count(local, 'nodes'), count(local, 'rels'), count(remote, 'nodes'), count(remote, 'rels'), out))
 
 
 if __name__ == '__main__':
