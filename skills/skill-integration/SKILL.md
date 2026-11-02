@@ -143,6 +143,7 @@ python3 <本 skill 目錄>/scripts/render.py <local 結果 | -> <snapshot.json> 
 只輸出下列項目, 沒有內容的項目省略:
 
 - Desktop 上的 symlink 路徑.
+- `mapping.tsv` 與 `snapshot.json` 的絕對路徑.
 - their 的分析方式: 全量, 增量 (新增 / 刪除 / 修改各幾個檔案, 關係 +N / -N), 或沿用既有 commit.
 - 錯誤與衝突: `render.py` 的錯誤, `snapshot.json` 或 `mapping.tsv` 與實際檔案不一致, 規則無法判定的矛盾.
 - 本次新增的 `unresolved` 項目與角色判斷沒把握的項目, 各一行.
