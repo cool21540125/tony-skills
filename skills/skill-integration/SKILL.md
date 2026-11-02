@@ -95,7 +95,7 @@ skill 資料夾內只有 `SKILL.md` 建成 node. 同資料夾的其他檔案 (�
 - 來源: `local` 或 `their`.
 - 載入形式: `Skill`, `Agent`, `Command`, `Hook`, `Rule` (由檔案位置決定).
 
-角色寫成 property `role` (至多一個), 不當 label: 只採用來源自述的分類 (README, 命名前綴, 資料夾或導覽型 SKILL 的明文), 轉成 PascalCase. 例: pstack 的 `Principle` / `Playbook`, superpowers 的 `Process` / `Implementation`. 來源沒有自述就不寫, 不自行推論. 依據的檔案記進 their `snapshot.json` 的 `role_sources`.
+角色寫成 property `role` (至多一個), 不當 label: 只採用來源自述的分類 (README, 命名前綴, 資料夾或導覽型 SKILL 的明文), 轉成 PascalCase. 判斷方法: 找來源自己為一群資產取的類別名稱, 例如 README 的分類清單, 共同的命名前綴, 共同的資料夾名稱; 類別名稱就是 role. 只套用在來源明確歸入該類的資產上, 沒被歸類的不寫, 不自行推論. 依據的檔案記進 their `snapshot.json` 的 `role_sources`.
 
 node 的 `props`:
 
