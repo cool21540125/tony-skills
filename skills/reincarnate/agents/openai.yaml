@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reincarnate"
+  short_description: "Create a prompt to continue in a new session"
+  default_prompt: "Use $reincarnate to prepare a copy-ready handoff prompt for a new session."
