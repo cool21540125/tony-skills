@@ -1,0 +1,4 @@
+interface:
+  display_name: "Naming Intuition"
+  short_description: "從英文母語者的語感, 拆解程式與工具命名背後的畫面, 典故與中譯陷阱"
+  default_prompt: "用 $naming-intuition 解釋 Prometheus 的 clamp_min 為什麼這樣命名."
