@@ -11,7 +11,7 @@ import json
 import re
 import sys
 
-KINDS = {'Skill', 'Agent', 'Command', 'Hook', 'Rule', 'Doc'}
+KINDS = {'Skill', 'Agent', 'Command', 'Hook', 'Rule'}
 TYPES = {'INVOKES', 'FLOWS_TO', 'REFERENCES'}
 
 
