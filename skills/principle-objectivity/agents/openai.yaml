@@ -1,0 +1,4 @@
+interface:
+  display_name: "Principle: Objectivity"
+  short_description: "客觀性: 用原字串與實際存在的詞描述, 以具體描述取代形容詞"
+  default_prompt: "依 $principle-objectivity 檢查這段描述是否都用受眾查得到的原字串與實際存在的詞."
