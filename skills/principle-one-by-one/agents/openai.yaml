@@ -1,0 +1,4 @@
+interface:
+  display_name: "One-by-one"
+  short_description: "一個一個來: 任何事情我們求穩定慢慢來, 避免一口氣處理一堆資訊"
+  default_prompt: "依 $principle-one-by-one 一步一步來"
