@@ -1,0 +1,4 @@
+interface:
+  display_name: "Principle: Reliability"
+  short_description: "可靠性: 主張要有佐證, 分開標明已求證、推測與未查證"
+  default_prompt: "依 $principle-reliability 檢查這段回覆的每個主張是否有佐證並標明分級."
