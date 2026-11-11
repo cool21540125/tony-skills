@@ -2,6 +2,12 @@
 
 給修改這個 repo 的 agent 與貢獻者的規則.
 
+## 定位與操作範圍
+
+- 這個 repo 是 Tony 專屬的 skill stack. 流程: 在這裡新增 / 修改 → push → 另開 terminal 安裝 → 實際使用後回來逐步優化.
+- 在這個專案提到新增 / 修改 / 刪除 skill, 一律操作本 repo 的 `skills/<name>/`. 只有使用者明確說「global」或「user level」時, 才改 user level 的 skill 目錄.
+- 這條優先於 user level 指示中「新建 skill 建在 user level 目錄並 symlink」的規則; 在本 repo 不建 symlink, 也不代為安裝.
+
 ## 結構
 
 - 每個 skill 是 `skills/<name>/`, 至少包含 `SKILL.md`; 輔助檔放 `references/`, `scripts/`, `assets/`.
@@ -17,6 +23,4 @@
 ## 寫作規則
 
 - **不綁定 LLM**: SKILL.md 正文不寫特定 agent 的工具名 (例: `WebSearch`, `Bash`), 改寫成能力描述 (例: 「用可用的網路搜尋工具」).
-- 語言: 中文為主, 專有名詞保留原文.
-- 標點: 用半形 `, ` `. ` `: `, 不用全形 `，` `。` `：`.
 - `README.md` 不列出個別 skill, 新增 skill 不需要改 README.
