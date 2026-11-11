@@ -1,0 +1,4 @@
+interface:
+  display_name: "Principle: Materiality"
+  short_description: "重大性: 每句過兩道閘門, 只留能幫決定或漏掉會付代價的內容"
+  default_prompt: "依 $principle-materiality 刪掉這段內容裡不影響決定的句子."
