@@ -1,0 +1,4 @@
+interface:
+  display_name: "Principle: Relevance"
+  short_description: "攸關性: 答案落在受眾碰得到的那一層, 實作細節只當查證依據"
+  default_prompt: "依 $principle-relevance 檢查這段解釋是否停在使用者碰得到的那一層."
