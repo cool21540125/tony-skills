@@ -1,0 +1,6 @@
+interface:
+  display_name: "Recap"
+  short_description: "離開任務一陣子再回來時, 快速喚回當時在做什麼與做到哪"
+  default_prompt: "用 $recap 提醒我剛剛在做什麼."
+policy:
+  allow_implicit_invocation: false
