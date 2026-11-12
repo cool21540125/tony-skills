@@ -1,7 +1,7 @@
 ---
 name: untangle
 disable-model-invocation: true
-description: "第三者介入釐清: user 覺得與 main agent 的對話陷入混亂時呼叫, 由 sonnet 與 opus 兩個 subagent 以旁觀者角度找出混亂源頭, 一語點破, 再由 main agent 彙整回覆."
+description: "第三者介入釐清: user 覺得與 main agent 的對話陷入混亂時呼叫, 由兩個不同 model 的 subagent 以旁觀者角度找出混亂源頭, 一語點破, 再由 main agent 彙整回覆."
 ---
 
 # 第三者介入釐清
@@ -27,7 +27,14 @@ description: "第三者介入釐清: user 覺得與 main agent 的對話陷入�
 
 ### 2. 啟動兩個 subagent, 然後等待
 
-用可用的 subagent 機制, **平行**啟動兩個全新的 subagent (不繼承 main agent 的推理脈絡), 分別指定 model 為 `sonnet` 與 `opus`, 兩者收到**完全相同**的 prompt (見下方「subagent prompt」).
+用可用的 subagent 機制, **平行**啟動兩個全新的 subagent (不繼承 main agent 的推理脈絡), 依 main agent 所在的環境指定 model, 兩者收到**完全相同**的 prompt (見下方「subagent prompt」).
+
+| 環境 | model A | model B |
+|---|---|---|
+| Claude | `sonnet` | `opus` |
+| Codex | `GPT-6.1-Sol` | `GPT-6.1 Terra` |
+
+- 上表的 model 名稱是寫死的. 若查無該 model 或指定後無法啟動, 則自行替換成其他 model, 繼續任務, 並通知 user: 列出無法使用的 model 名稱, 說明 untangle skill 需要更新 model 對照表.
 
 啟動之後到兩個 subagent 都回覆以前, main agent **不輸出任何文字給 user **, 不預告、不先給自己的看法.
 
@@ -39,17 +46,17 @@ description: "第三者介入釐清: user 覺得與 main agent 的對話陷入�
 # main 摘要
 (綜合兩份說明的摘要, 200 字以內. 先講混亂的源頭是什麼, 再講接下來怎麼走)
 
-# sonnet 的說明
-(sonnet subagent 的回覆, 原文照登)
+# {model A} 的說明
+(model A subagent 的回覆, 原文照登)
 
-# opus 的說明
-(opus subagent 的回覆, 原文照登)
+# {model B} 的說明
+(model B subagent 的回覆, 原文照登)
 
 # main 的說明
 (說明額外能夠讓 user 回歸到核心問題的補充細節)
 ```
 
-- sonnet 的說明 / opus 的說明
+- model A 的說明 / model B 的說明
   - 照登, 不潤飾、不刪減
 - main agent 的說明
   - 不得為自己辯護而淡化 subagent 指出的問題

@@ -1,6 +1,6 @@
 interface:
   display_name: "Untangle"
-  short_description: "對話混亂時, 由 sonnet 與 opus 以第三者角度點破混亂源頭"
+  short_description: "對話混亂時, 由兩個 model 以第三者角度點破混亂源頭"
   default_prompt: "用 $untangle 幫我看看我們剛才的對話是哪裡卡住了."
 policy:
   allow_implicit_invocation: false
